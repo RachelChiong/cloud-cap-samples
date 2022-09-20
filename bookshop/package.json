@@ -10,9 +10,10 @@
     "index.js"
   ],
   "dependencies": {
-    "@sap/cds": ">=5.9",
+    "@sap/cds": "^6.1.3",
     "express": "^4.17.1",
-    "passport": ">=0.4.1"
+    "passport": ">=0.4.1",
+    "sqlite3": "^5.1.1"
   },
   "scripts": {
     "genres": "cds serve test/genres.cds",
@@ -21,7 +22,12 @@
   },
   "cds": {
     "requires": {
-      "db": "sql"
+      "db": {
+        "kind": "sql"
+      },
+      "hana": {
+        "deploy-format": "hdbtable"
+      }
     }
   }
 }
